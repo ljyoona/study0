@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "57bdfa11-055b-4ca4-9291-ce0a3b6fcaad",
+		"name": "院内",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "院内登录",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"交易成功\");\r",
+							"});\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.status).to.eql('Success');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"loginName\": \"csli\",\r\n    \"password\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "39.98.139.64:4601/blood/login",
+					"host": [
+						"39",
+						"98",
+						"139",
+						"64"
+					],
+					"port": "4601",
+					"path": [
+						"blood",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
